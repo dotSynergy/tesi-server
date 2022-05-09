@@ -1,0 +1,17 @@
+{
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "bloatless/php-websocket": "^3.0",
+        "vlucas/phpdotenv": "^5.4",
+        "doctrine/orm": "^2.11",
+        "doctrine/cache": "^2.1",
+        "symfony/cache": "^6.0",
+        "doctrine/annotations": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+          "App\\": "src/App/"
+        }
+    }
+}
