@@ -17,7 +17,7 @@ class ModelManager {
     {
 
         // Setup Doctrine
-        $paths = array(__DIR__.'/../../../src/App/Models');
+        $paths = array($_ENV['APP_ROOT'].'/src/App/Models');
         $isDevMode = true;
 
         $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode,null, null, false);

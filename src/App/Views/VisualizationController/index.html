@@ -1,0 +1,26 @@
+<div>
+  <div id="ws" style="display: flex;justify-content: space-evenly;">
+    <div id="ws-col" style="flex-direction: column; align-items: baseline">
+      <div id="ws-message" style="margin: 1em;">
+        <label style='color: yellow'>WebSocket Connecting...</label>
+      </div>
+      <div id="ws-data">
+      </div>
+    </div>
+    <div id="ws-canvas-container" style="display: flex;flex-direction: row;flex-grow: 0;">
+      <canvas id="ws-canvas" style="height: 100%;width: 100%;">
+      </canvas>
+    </div>
+  </div>
+  <div id="map" style="height: 400px;"></div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="assets/js/index.js" defer></script>
+<script src="assets/js/ws.js" defer></script>

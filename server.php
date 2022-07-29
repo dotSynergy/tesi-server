@@ -16,7 +16,7 @@ $server->setLogger(new StdOutLogger());
 
 // server settings
 //$server->setMaxClients(100);
-$server->setAllowedOrigin('dotsynergy.ddns.net');
+$server->setAllowedOrigin($_ENV['APP_DOMAIN']);
 //$server->setMaxConnectionsPerIp(100);
 
 // add your applications

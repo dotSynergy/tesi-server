@@ -49,7 +49,7 @@ class DataSaver extends Application
     }
 
     /**
-     * Handles incomming data/requests.
+     * Handles incoming data/requests.
      * If valid action is given the according method will be called.
      *
      * @param string $data
@@ -65,13 +65,23 @@ class DataSaver extends Application
                 return;
             }
 
-
             $s = new Models\SensorsData();
             $s->setId(0);
+            $s->lat = $decodedData['data']['lat'];
+            $s->lng = $decodedData['data']['lng'];
+            $s->alt = $decodedData['data']['alt'];
+            $s->tmp = $decodedData['data']['temp'];
+            $s->e_tmp = $decodedData['data']['temp_ext'];
+            $s->hum = $decodedData['data']['hum'];
+            $s->e_hum = $decodedData['data']['hum_ext'];
+            $s->light = $decodedData['data']['light'];
+            $s->ppm = $decodedData['data']['air_ppm'];
 
             $m = DB\ModelManager::getInstance();
             $m->persist($s);
             $m->flush();
+
+            $this->actionEcho($decodedData['data']);
 
         } catch (\RuntimeException $e) {
             // @todo Handle/Log error
@@ -91,12 +101,12 @@ class DataSaver extends Application
     /**
      * Echoes data back to client(s).
      *
-     * @param string $text
+     * @param array $data
      * @return void
      */
-    private function actionEcho(string $text): void
+    private function actionEcho(array $data): void
     {
-        $encodedData = $this->encodeData('echo', $text);
+        $encodedData = $this->encodeData('echo', $data);
         foreach ($this->clients as $sendto) {
             $sendto->send($encodedData);
         }

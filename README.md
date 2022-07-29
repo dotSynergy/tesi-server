@@ -29,4 +29,4 @@ piccolo software lato server per accettare una stream di dati da storicizzare in
 ## problemi/limitazioni
 
 - doctrine per qualche motivo non mi setta i timestamp piú precisi del secondo
-- servirebbe qualche metodo di autenticazione per evitare che qualche bot spammi il database
+- servirebbe qualche metodo di autenticazione per evitare che qualche bot riempia il database

@@ -22,7 +22,7 @@ class SensorsData
 
     /**
      * @var DateTime
-     * @ORM\Column(type="datetime",nullable=false)
+     * @ORM\Column(type="datetime")
      */
     public DateTime $ts;
     /**
@@ -73,9 +73,8 @@ class SensorsData
 
     public function __construct()
     {
-        $this->ts = new DateTime();
+        $this->ts = new DateTime('now', new \DateTimeZone('UTC'));
     }
-
 
     /**
      * @return int
