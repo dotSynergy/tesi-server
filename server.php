@@ -21,5 +21,7 @@ $server->setAllowedOrigin($_ENV['APP_DOMAIN']);
 
 // add your applications
 $server->registerApplication('drone', App\DataSaver::getInstance());
+$server->registerApplication('drone-wss', App\DataSaver::getInstance());
+
 
 $server->run();
